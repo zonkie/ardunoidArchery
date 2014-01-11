@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.ardunoid.archery"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_archery"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="de.ardunoid.archery.HitCount"
+            android:label="@string/title_activity_hit_count" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="de.ardunoid.archery.AboutActivity"
+            android:label="@string/action_about" >
+        </activity>
+        <activity
+            android:name="de.ardunoid.archery.StatsDayActivity"
+            android:label="@string/title_activity_stats_day" >
+        </activity>
+    </application>
+
+</manifest>
