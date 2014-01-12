@@ -163,6 +163,10 @@ public class HitCount extends Activity {
 			final Intent intentStatsDay = new Intent(this, StatsDayActivity.class);
 			startActivity(intentStatsDay);
 			break;
+		case R.id.action_timer:
+			final Intent intentTimer = new Intent(this, TimerActivity.class);
+			startActivity(intentTimer);
+			break;
 		case R.id.action_about:
 			final Intent intentAbout = new Intent(this, About.class);
 			startActivity(intentAbout);

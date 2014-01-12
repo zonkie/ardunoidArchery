@@ -152,7 +152,9 @@ public class DBAdapter {
 	}
 	
 	
-		
+
+	
+	
 	public Cursor getStatsGroupedBy(Integer groupType) {
 		String query;
 		switch(groupType) {
@@ -166,9 +168,21 @@ public class DBAdapter {
 		return db.rawQuery(query , null);
 	}
 	
+	public Cursor getStatsOverall() {
+		String query = "SELECT " + KEY_DATE + " AS " + KEY_DATE + ", " + KEY_VALUE + "as " + KEY_VALUE + ", sum(" + KEY_VALUE + ") AS " + KEY_SUM + ", count(" + KEY_VALUE + ") AS " + KEY_COUNT + " FROM " + DATABASE_TABLE + " GROUP BY " + KEY_DATE + ", " + KEY_VALUE;
+		return db.rawQuery(query , null);
+	}
+	
+	
 	public Cursor getList() {
 		return db.rawQuery("SELECT " + KEY_ROWID + "," + KEY_VALUE + " AS " + KEY_VALUE + " FROM " + DATABASE_TABLE, null);
 	}
+	
+
+	
+	
+	
+	
 	
 	public Cursor fetchOne(long rowId) throws SQLException {
 		Cursor mCursor = db.query(true, DATABASE_TABLE, new String[] {

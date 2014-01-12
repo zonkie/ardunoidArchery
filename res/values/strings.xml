@@ -13,11 +13,10 @@
     <string name="title_statsComplete">Detailed overalletailed</string>
     <string name="title_activity_stats_day">Scores/arrows by day</string>
     <string name="title_activity_hits_day">Daily Overview</string>
-    
+    <string name="title_activity_stats_overall_graph">Overall Stats</string>
     <string name="date">Date</string>
     <string name="score">Score</string>
     <string name="arrows">Arrows</string>
-    
     <string name="pointsWall">Wall</string>
     <string name="points0">0</string>
     <string name="points1">1</string>
@@ -30,20 +29,28 @@
     <string name="points8">8</string>
     <string name="points9">9</string>
     <string name="points10">10</string>
+
+    
+        <string name="stop">Stop</string>
+        <string name="start">Start</string>
+        
+	<string name="title_activity_timer">Timer</string>
+	<string name="action_timer">Timer</string>
+
+    <!-- About -->
+    <string name="action_about">About</string>
+    <string name="txtAboutNameLabel">Made by:</string>
+    <string name="txtAboutNameValue">Sönke D.</string>
+    <string name="txtAboutEmailLabel">Email:</string>
+    <string name="txtAboutEmailValue">info@ardunoid.de</string>
+    <string name="txtAboutWebLabel">Website</string>
+    <string name="txtAboutWebValue">android.de</string>
     
     
-	<!-- About -->
-	<string name="action_about">About</string>
-	<string name="txtAboutNameLabel">Made by:</string>
-	<string name="txtAboutNameValue">Sönke D.</string>
-	<string name="txtAboutEmailLabel">Email:</string>
-	<string name="txtAboutEmailValue">info@ardunoid.de</string>
-	<string name="txtAboutWebLabel">Website</string>
-	<string name="txtAboutWebValue">android.de</string>
-	
-	<string name="txtDialogDeleteHead">Delete?</string>
-	<string name="txtDialogDeleteMessage">Delete this Entry</string>
-	<string name="txtDialogBtnNegative">Nope!</string>
-	<string name="txtDialogBrnPositive">Yep!</string>
-	
-	</resources>
+    <string name="txtDialogDeleteHead">Delete?</string>
+    <string name="txtDialogDeleteMessage">Delete this Entry</string>
+    <string name="txtDialogBtnNegative">Nope!</string>
+    <string name="txtDialogBrnPositive">Yep!</string>
+    
+
+</resources>

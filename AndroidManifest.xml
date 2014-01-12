@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="de.ardunoid.archery.AboutActivity"
+            android:name="de.ardunoid.archery.About"
             android:label="@string/action_about" >
         </activity>
         <activity
@@ -33,6 +33,14 @@
         <activity
             android:name="de.ardunoid.archery.HitsDayActivity"
             android:label="@string/title_activity_hits_day" >
+        </activity>
+        <activity
+            android:name="de.ardunoid.archery.StatsOverallGraph"
+            android:label="@string/title_activity_stats_overall_graph" >
+        </activity>
+        <activity
+            android:name="de.ardunoid.archery.TimerActivity"
+            android:label="@string/title_activity_timer" >
         </activity>
     </application>
 
