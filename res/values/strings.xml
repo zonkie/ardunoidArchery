@@ -11,7 +11,8 @@
     <string name="title_statsOverview">Overall</string>
     <string name="title_statsDay">single Day</string>
     <string name="title_statsComplete">Detailed overalletailed</string>
-    <string name="title_activity_stats_day">StatsDayActivity</string>
+    <string name="title_activity_stats_day">Scores/arrows by day</string>
+    <string name="title_activity_hits_day">Daily Overview</string>
     
     <string name="date">Date</string>
     <string name="score">Score</string>
@@ -32,11 +33,17 @@
     
     
 	<!-- About -->
-<string name="action_about">About</string>
+	<string name="action_about">About</string>
 	<string name="txtAboutNameLabel">Made by:</string>
 	<string name="txtAboutNameValue">Sönke D.</string>
 	<string name="txtAboutEmailLabel">Email:</string>
 	<string name="txtAboutEmailValue">info@ardunoid.de</string>
 	<string name="txtAboutWebLabel">Website</string>
-	<string name="txtAboutWebValue">android.de</string>   
-</resources>
+	<string name="txtAboutWebValue">android.de</string>
+	
+	<string name="txtDialogDeleteHead">Delete?</string>
+	<string name="txtDialogDeleteMessage">Delete this Entry</string>
+	<string name="txtDialogBtnNegative">Nope!</string>
+	<string name="txtDialogBrnPositive">Yep!</string>
+	
+	</resources>

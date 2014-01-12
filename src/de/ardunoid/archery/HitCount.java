@@ -1,9 +1,12 @@
 package de.ardunoid.archery;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import android.R.integer;
 import android.os.Bundle;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -18,8 +21,10 @@ public class HitCount extends Activity {
 	final Calendar c = Calendar.getInstance();
 	DBAdapter db = new DBAdapter(this);
 	final Integer toastlength = 100; 
+	final String tag = "ardunoid";
+	@SuppressLint("SimpleDateFormat")
+	final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
@@ -35,8 +40,10 @@ public class HitCount extends Activity {
 
 	
 	public boolean saveHit(Integer Points) {
-		String date = String.valueOf(c.get(Calendar.YEAR)) + "-" + String.valueOf(c.get(Calendar.DATE)) + "-" + String.valueOf(c.get(Calendar.DAY_OF_MONTH));
+		
+        String date = dateFormat.format(new Date());
 		String time= String.valueOf(c.get(Calendar.HOUR)) + ":" + String.valueOf(c.get(Calendar.MINUTE)) + ":" + String.valueOf(c.get(Calendar.SECOND));
+		
 		db.open();
 		try {
 			final Calendar c = Calendar.getInstance();
@@ -71,7 +78,7 @@ public class HitCount extends Activity {
 	
 	public void updateHits(){
 		db.open();
-		String date = String.valueOf(c.get(Calendar.YEAR)) + "-" + String.valueOf(c.get(Calendar.DATE)) + "-" + String.valueOf(c.get(Calendar.DAY_OF_MONTH));
+		String date = dateFormat.format(new Date());
 		TextView txtResultArrows = (TextView) findViewById(R.id.textResultArrows);
 		TextView txtResultPoints = (TextView) findViewById(R.id.textResultPoints);
 		int resultArrows = -1;

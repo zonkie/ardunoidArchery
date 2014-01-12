@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="wrap_content"
+	android:layout_height="wrap_content">
+	<ListView android:id="@+id/android:list" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
+	<GridLayout 
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:columnCount="1" >
+	    <TextView
+	        android:id="@+id/textDate"
+	        android:layout_column="0"
+	        android:layout_gravity="left|top"
+	        android:layout_row="0"
+	        android:text="@string/date" />
+	    <TextView
+	        android:id="@+id/textScore"
+	        android:layout_column="0"
+	        android:layout_gravity="center_horizontal|top"
+	        android:layout_row="0"
+	        android:text="@string/score"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+</GridLayout>
+</LinearLayout>
+    

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.ardunoid.archery"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0.1" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -29,6 +29,10 @@
         <activity
             android:name="de.ardunoid.archery.StatsDayActivity"
             android:label="@string/title_activity_stats_day" >
+        </activity>
+        <activity
+            android:name="de.ardunoid.archery.HitsDayActivity"
+            android:label="@string/title_activity_hits_day" >
         </activity>
     </application>
 

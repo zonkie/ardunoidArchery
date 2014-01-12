@@ -117,6 +117,9 @@ public class DBAdapter {
 		}
 		return cursor.getInt(0);
 	}
+	
+	
+	
 	public int getArrowsByDate(String date) {
 		Cursor cursor = db.rawQuery("SELECT COUNT(" + KEY_ROWID + ") FROM "
 				+ DATABASE_TABLE + " WHERE " + KEY_DATE + " = '" + date + "'", null);
@@ -126,15 +129,30 @@ public class DBAdapter {
 		return cursor.getInt(0);
 	}
 	public int getPointsByDate(String date) {
-		Cursor cursor = db.rawQuery("SELECT SUM(" + KEY_VALUE + ") FROM "
-				+ DATABASE_TABLE + " WHERE " + KEY_DATE + " = '" + date + "'", null);
+		Cursor cursor = db.rawQuery("SELECT SUM(" + KEY_VALUE + ") FROM " + DATABASE_TABLE + " WHERE " + KEY_DATE + " = '" + date + "'", null);
 		if (cursor.moveToFirst()) {
 			return cursor.getInt(0);
 		}
 		return cursor.getInt(0);
 	}
 	
-
+	public Cursor getHitsByDate(String date) {
+		String query = "SELECT " + KEY_ROWID + ", " + KEY_DATE + " AS " + KEY_DATE + ", " + KEY_VALUE + " AS " + KEY_VALUE + " FROM " + DATABASE_TABLE+ " WHERE " + KEY_DATE + " = '" + date + "'";
+		Log.d("ardunoid", query);
+		return db.rawQuery(query , null);
+	}
+	
+	public String getDateByHitId(Integer id) {
+		String query = "SELECT " + KEY_DATE + " FROM " + DATABASE_TABLE + " WHERE " + KEY_ROWID + " = " + id;
+		Cursor cursor = db.rawQuery(query, null);
+		if (cursor.moveToFirst()) {
+			return cursor.getString(0);
+		}
+		return cursor.getString(0);
+	}
+	
+	
+		
 	public Cursor getStatsGroupedBy(Integer groupType) {
 		String query;
 		switch(groupType) {
@@ -145,7 +163,6 @@ public class DBAdapter {
 				query = "SELECT " + KEY_ROWID + ", " + KEY_DATE + ", sum(" + KEY_VALUE + ") AS " + KEY_SUM + ", count(" + KEY_VALUE + ") AS " + KEY_COUNT + " FROM " + DATABASE_TABLE + " GROUP BY " + KEY_DATE;
 				break;
 		}
-		Log.i("ardunoid", "Query: " + query);
 		return db.rawQuery(query , null);
 	}
 	
@@ -153,7 +170,6 @@ public class DBAdapter {
 		return db.rawQuery("SELECT " + KEY_ROWID + "," + KEY_VALUE + " AS " + KEY_VALUE + " FROM " + DATABASE_TABLE, null);
 	}
 	
-
 	public Cursor fetchOne(long rowId) throws SQLException {
 		Cursor mCursor = db.query(true, DATABASE_TABLE, new String[] {
 				KEY_ROWID, KEY_DATE, KEY_VALUE }, KEY_ROWID + "=" + rowId,
@@ -164,4 +180,13 @@ public class DBAdapter {
 		return mCursor;
 	}
 
+	public void deleteEntry(Integer id){
+		String query = "DELETE FROM " + DATABASE_TABLE + " WHERE " + KEY_ROWID + " = " + id;
+		String table = DATABASE_TABLE;
+		String whereClause = KEY_ROWID + "= ?";
+		String[] whereArgs = new String[] { String.valueOf(id) };
+		Log.d("ardunoid", query);
+	    db.delete(table, whereClause, whereArgs);
+	}
+	
 }

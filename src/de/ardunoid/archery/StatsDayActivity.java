@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
@@ -16,6 +19,8 @@ public class StatsDayActivity extends ListActivity {
 	private DBAdapter DBAdapter;
 	private Cursor mNotesCursor;
 
+	private static final int ACTIVITY_EDIT_DAY = 1;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -24,7 +29,7 @@ public class StatsDayActivity extends ListActivity {
 			DBAdapter = new DBAdapter(this);
 			DBAdapter.open();
 			fillData();
-			DBAdapter.close();
+			//DBAdapter.close();
 		} catch (Exception e) {
 			Context context = getApplicationContext();
 			CharSequence text = "I'm sorry, there was en Error reading the latest Entry from the Database!";
@@ -36,6 +41,21 @@ public class StatsDayActivity extends ListActivity {
 
 	}
 
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		super.onListItemClick(l, v, position, id);
+	    Cursor c = mNotesCursor;
+	    c.moveToPosition(position);
+	    
+	    Intent i = new Intent(this, HitsDayActivity.class);
+	    try {
+	    	i.putExtra(de.ardunoid.archery.DBAdapter.KEY_DATE, c.getString(c.getColumnIndex(de.ardunoid.archery.DBAdapter.KEY_DATE)));
+	    } catch(Exception e) {
+	    	Log.e("ardunoid", "Could not put extra" + e.getMessage().toString());
+	    }
+	    startActivityForResult(i, ACTIVITY_EDIT_DAY);
+	}
+	
 	private void fillData() {
 		
 		// Get all of the rows from the database and create the item list
