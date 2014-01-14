@@ -1,6 +1,7 @@
 package de.ardunoid.archery;
 
 import de.ardunoid.archery.DBAdapter;
+import de.ardunoid.archery2.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;

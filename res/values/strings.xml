@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Archery</string>
-    <string name="title_activity_hit_count">ardunoid|Archery</string>
+    <string name="app_name">ardunoid|Archery 2</string>
+    <string name="title_activity_hit_count">ardunoid|Archery 2</string>
     <string name="action_settings">Settings</string>
     <string name="action_stats">Stats</string>
     <string name="action_hitcount">Hits</string>
@@ -29,6 +29,16 @@
     <string name="points8">8</string>
     <string name="points9">9</string>
     <string name="points10">10</string>
+    
+    <string name="distance6m">6 m</string>
+    <string name="distance12m">12 m</string>
+    <string name="distance18m">18 m</string>
+        
+    <string name="targetFita3x20">3x20cm</string>
+    <string name="targetFita80x80">1x80cm</string>
+    
+    
+    
 
     
         <string name="stop">Stop</string>

@@ -16,12 +16,15 @@ public class DBAdapter {
 	public static final String KEY_VALUE = "POINTS";
 	public static final String KEY_SUM = "SUM";
 	public static final String KEY_COUNT = "COUNT";
+	public static final String KEY_DISTANCE = "DISTANCE";
+	public static final String KEY_TARGETTYPE = "TARGETTYPE";
+
 	
 	private static final String TAG = "DBAdapter";
 
 	private static final String DATABASE_NAME = "ardunoidarchery";
 	private static final String DATABASE_TABLE = "hits";
-	private static final int DATABASE_VERSION = 1;
+	private static final int DATABASE_VERSION = 102; //Android manifest version == 1.0.2 
 	
 
 	private static final String DATABASE_CREATE = "CREATE TABLE "
@@ -29,8 +32,16 @@ public class DBAdapter {
 		+ KEY_ROWID + " INTEGER PRIMARY KEY ASC,"
 		+ KEY_VALUE + " TEXT NOT NULL,"
 		+ KEY_DATE + " TEXT NOT NULL, "
-		+ KEY_TIME + " TEXT NOT NULL "
+		+ KEY_TIME + " TEXT NOT NULL ,"
+		+ KEY_DISTANCE + " TEXT NOT NULL, "
+		+ KEY_TARGETTYPE + " TEXT NOT NULL "
 		+")";
+	
+	public static final String DATABASE_UPDATE_1_TO_102 = "UPDATE TABLE "
+		+ DATABASE_TABLE + " ADD COLUMN "
+		+ KEY_DISTANCE + " TEXT NOT NULL DEFAULT '0', "
+		+ KEY_TARGETTYPE + " TEXT NOT NULL DEFAULT '0' "
+		;
 
 	private final Context context;
 
@@ -55,18 +66,18 @@ public class DBAdapter {
 
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-/*			if(oldVersion <= 1){
+			if(oldVersion <= 1){
 				Log.d("test","Updating DB from version 1 to version 2");
-				db.execSQL(DATABASE_UPDATE_ONE_TO_TWO);
-				oldVersion=2;
+				db.execSQL(DATABASE_UPDATE_1_TO_102);
+				oldVersion=102;
 			}
-			if(oldVersion==2 || oldVersion==3){
+/*						if(oldVersion==102 || oldVersion==103){
 				Log.d("test","Updating DB to version 4");
 				db.execSQL(DATABASE_UPDATE_TO_FOUR_pt1);
 				db.execSQL(DATABASE_UPDATE_TO_FOUR_pt2);
-				oldVersion = 4;
+				oldVersion = 104;
 			}
-			if(oldVersion==4){
+			if(oldVersion==104){
 				Log.d("test","Updating DB to version 5");
 				db.execSQL(DATABASE_UPDATE_TO_FIVE);
 			}*/

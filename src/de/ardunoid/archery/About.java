@@ -1,6 +1,6 @@
 package de.ardunoid.archery;
 
-import de.ardunoid.archery.R;
+import de.ardunoid.archery2.R;
 import android.app.Activity;
 import android.content.Intent;
 

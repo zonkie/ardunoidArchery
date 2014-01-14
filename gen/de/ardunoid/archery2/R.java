@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package de.ardunoid.archery;
+package de.ardunoid.archery2;
 
 public final class R {
     public static final class attr {
@@ -176,13 +176,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int action_about=0x7f090020;
-        public static final int action_hitcount=0x7f090021;
-        public static final int action_settings=0x7f09001d;
-        public static final int action_stats=0x7f09001e;
-        public static final int action_timer=0x7f09001f;
-        public static final int btnTimerStart=0x7f09001a;
-        public static final int btnTimerStop=0x7f09001b;
+        public static final int action_about=0x7f090027;
+        public static final int action_hitcount=0x7f090028;
+        public static final int action_settings=0x7f090024;
+        public static final int action_stats=0x7f090025;
+        public static final int action_timer=0x7f090026;
+        public static final int btnTimerStart=0x7f090021;
+        public static final int btnTimerStop=0x7f090022;
         public static final int button0=0x7f090007;
         public static final int button1=0x7f090008;
         public static final int button10=0x7f090011;
@@ -198,15 +198,22 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int checkedTextView1=0x7f090001;
         public static final int checkedTextView2=0x7f090003;
         public static final int checkedTextView3=0x7f090005;
-        public static final int section_label=0x7f09001c;
-        public static final int textArrows=0x7f090014;
-        public static final int textCount=0x7f090018;
-        public static final int textDate=0x7f090016;
-        public static final int textPoints=0x7f090012;
-        public static final int textResultArrows=0x7f090015;
-        public static final int textResultPoints=0x7f090013;
-        public static final int textScore=0x7f090017;
-        public static final int textSum=0x7f090019;
+        public static final int distance12m=0x7f090018;
+        public static final int distance18m=0x7f090019;
+        public static final int distance6m=0x7f090017;
+        public static final int radioDistance=0x7f090016;
+        public static final int radioTargetsize=0x7f09001a;
+        public static final int section_label=0x7f090023;
+        public static final int target1x80=0x7f09001c;
+        public static final int target3x20=0x7f09001b;
+        public static final int textArrows=0x7f090013;
+        public static final int textCount=0x7f09001f;
+        public static final int textDate=0x7f09001d;
+        public static final int textPoints=0x7f090015;
+        public static final int textResultArrows=0x7f090012;
+        public static final int textResultPoints=0x7f090014;
+        public static final int textScore=0x7f09001e;
+        public static final int textSum=0x7f090020;
         public static final int textView1=0x7f090000;
         public static final int textView3=0x7f090004;
         public static final int txtTimeleft=0x7f090002;
@@ -230,14 +237,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class string {
         /**  About 
          */
-        public static final int action_about=0x7f060020;
+        public static final int action_about=0x7f060025;
         public static final int action_hitcount=0x7f060004;
         public static final int action_settings=0x7f060002;
         public static final int action_stats=0x7f060003;
-        public static final int action_timer=0x7f06001f;
+        public static final int action_timer=0x7f060024;
         public static final int app_name=0x7f060000;
         public static final int arrows=0x7f06000f;
         public static final int date=0x7f06000d;
+        public static final int distance12m=0x7f06001d;
+        public static final int distance18m=0x7f06001e;
+        public static final int distance6m=0x7f06001c;
         public static final int hello_world=0x7f060005;
         public static final int points0=0x7f060011;
         public static final int points1=0x7f060012;
@@ -252,27 +262,29 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int points9=0x7f06001a;
         public static final int pointsWall=0x7f060010;
         public static final int score=0x7f06000e;
-        public static final int start=0x7f06001d;
-        public static final int stop=0x7f06001c;
+        public static final int start=0x7f060022;
+        public static final int stop=0x7f060021;
+        public static final int targetFita3x20=0x7f06001f;
+        public static final int targetFita80x80=0x7f060020;
         public static final int title_activity_hit_count=0x7f060001;
         public static final int title_activity_hits_day=0x7f06000b;
         public static final int title_activity_stats=0x7f060006;
         public static final int title_activity_stats_day=0x7f06000a;
         public static final int title_activity_stats_overall_graph=0x7f06000c;
-        public static final int title_activity_timer=0x7f06001e;
+        public static final int title_activity_timer=0x7f060023;
         public static final int title_statsComplete=0x7f060009;
         public static final int title_statsDay=0x7f060008;
         public static final int title_statsOverview=0x7f060007;
-        public static final int txtAboutEmailLabel=0x7f060023;
-        public static final int txtAboutEmailValue=0x7f060024;
-        public static final int txtAboutNameLabel=0x7f060021;
-        public static final int txtAboutNameValue=0x7f060022;
-        public static final int txtAboutWebLabel=0x7f060025;
-        public static final int txtAboutWebValue=0x7f060026;
-        public static final int txtDialogBrnPositive=0x7f06002a;
-        public static final int txtDialogBtnNegative=0x7f060029;
-        public static final int txtDialogDeleteHead=0x7f060027;
-        public static final int txtDialogDeleteMessage=0x7f060028;
+        public static final int txtAboutEmailLabel=0x7f060028;
+        public static final int txtAboutEmailValue=0x7f060029;
+        public static final int txtAboutNameLabel=0x7f060026;
+        public static final int txtAboutNameValue=0x7f060027;
+        public static final int txtAboutWebLabel=0x7f06002a;
+        public static final int txtAboutWebValue=0x7f06002b;
+        public static final int txtDialogBrnPositive=0x7f06002f;
+        public static final int txtDialogBtnNegative=0x7f06002e;
+        public static final int txtDialogDeleteHead=0x7f06002c;
+        public static final int txtDialogDeleteMessage=0x7f06002d;
     }
     public static final class style {
         /** 
@@ -321,8 +333,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ButtonBarContainerTheme_buttonBarButtonStyle de.ardunoid.archery:buttonBarButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ButtonBarContainerTheme_buttonBarStyle de.ardunoid.archery:buttonBarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ButtonBarContainerTheme_buttonBarButtonStyle de.ardunoid.archery2:buttonBarButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ButtonBarContainerTheme_buttonBarStyle de.ardunoid.archery2:buttonBarStyle}</code></td><td></td></tr>
            </table>
            @see #ButtonBarContainerTheme_buttonBarButtonStyle
            @see #ButtonBarContainerTheme_buttonBarStyle
@@ -331,23 +343,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f010000, 0x7f010001
         };
         /**
-          <p>This symbol is the offset where the {@link de.ardunoid.archery.R.attr#buttonBarButtonStyle}
+          <p>This symbol is the offset where the {@link de.ardunoid.archery2.R.attr#buttonBarButtonStyle}
           attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name de.ardunoid.archery:buttonBarButtonStyle
+          @attr name de.ardunoid.archery2:buttonBarButtonStyle
         */
         public static final int ButtonBarContainerTheme_buttonBarButtonStyle = 1;
         /**
-          <p>This symbol is the offset where the {@link de.ardunoid.archery.R.attr#buttonBarStyle}
+          <p>This symbol is the offset where the {@link de.ardunoid.archery2.R.attr#buttonBarStyle}
           attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name de.ardunoid.archery:buttonBarStyle
+          @attr name de.ardunoid.archery2:buttonBarStyle
         */
         public static final int ButtonBarContainerTheme_buttonBarStyle = 0;
     };

@@ -8,12 +8,13 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import de.ardunoid.archery2.R;
 
 public class TimerActivity extends Activity {
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		setContentView(R.layout.activity_timer);
 
 		final long ArrowCount = 3;
@@ -77,4 +78,6 @@ public class TimerActivity extends Activity {
 		getMenuInflater().inflate(R.menu.timer, menu);
 		return true;
 	}
+	
+	
 }

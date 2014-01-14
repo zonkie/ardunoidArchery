@@ -14,8 +14,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import de.ardunoid.archery2.R;
 
 public class HitCount extends Activity {
 	final Calendar c = Calendar.getInstance();
@@ -43,6 +45,8 @@ public class HitCount extends Activity {
 		
         String date = dateFormat.format(new Date());
 		String time= String.valueOf(c.get(Calendar.HOUR)) + ":" + String.valueOf(c.get(Calendar.MINUTE)) + ":" + String.valueOf(c.get(Calendar.SECOND));
+		RadioGroup distance = (RadioGroup) findViewById(R.id.radioDistance);
+		RadioGroup targetsize = (RadioGroup) findViewById(R.id.radioTargetsize);
 		
 		db.open();
 		try {
