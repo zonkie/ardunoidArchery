@@ -17,6 +17,8 @@
     <string name="date">Date</string>
     <string name="score">Score</string>
     <string name="arrows">Arrows</string>
+    
+    <string name="points">Points</string>
     <string name="pointsWall">Wall</string>
     <string name="points0">0</string>
     <string name="points1">1</string>
@@ -30,19 +32,19 @@
     <string name="points9">9</string>
     <string name="points10">10</string>
     
+    <string name="distance">Distance</string>
     <string name="distance6m">6 m</string>
     <string name="distance12m">12 m</string>
     <string name="distance18m">18 m</string>
-        
+
+    <string name="target">Targettype</string>
     <string name="targetFita3x20">3x20cm</string>
     <string name="targetFita80x80">1x80cm</string>
     
     <string name="Blindshot">Blindshot</string>
     
-
-    
-        <string name="stop">Stop</string>
-        <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="start">Start</string>
         
 	<string name="title_activity_timer">Timer</string>
 	<string name="action_timer">Timer</string>

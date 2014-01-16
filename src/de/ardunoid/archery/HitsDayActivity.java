@@ -105,8 +105,8 @@ public class HitsDayActivity extends ListActivity {
 		mHitsCursor = DBAdapter.getHitsByDate(date);
 		startManagingCursor(mHitsCursor);
 		
-		String[] from = new String[] { de.ardunoid.archery.DBAdapter.KEY_DATE, de.ardunoid.archery.DBAdapter.KEY_VALUE};
-		int[] to = new int[] { R.id.textDate, R.id.textScore};
+		String[] from = new String[] { de.ardunoid.archery.DBAdapter.KEY_DATE, de.ardunoid.archery.DBAdapter.KEY_VALUE, de.ardunoid.archery.DBAdapter.KEY_DISTANCE, de.ardunoid.archery.DBAdapter.KEY_TARGETTYPE}; //, de.ardunoid.archery.DBAdapter.KEY_BLINDSHOT 
+		int[] to = new int[] { R.id.textDate, R.id.textScore, R.id.textDistance, R.id.textTargettype};//, R.id.textBlindshot
 		// Now create a simple cursor adapter and set it to display
 		SimpleCursorAdapter notes = new SimpleCursorAdapter(this, R.layout.activity_hits_day, mHitsCursor, from, to);
 		setListAdapter(notes);

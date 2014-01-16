@@ -163,7 +163,7 @@ public class DBAdapter {
 	}
 	
 	public Cursor getHitsByDate(String date) {
-		String query = "SELECT " + KEY_ROWID + ", " + KEY_DATE + " AS " + KEY_DATE + ", " + KEY_VALUE + " AS " + KEY_VALUE + " FROM " + DATABASE_TABLE+ " WHERE " + KEY_DATE + " = '" + date + "'";
+		String query = "SELECT " + KEY_ROWID + ", " + KEY_DATE + " AS " + KEY_DATE + ", " + KEY_VALUE + " AS " + KEY_VALUE + " , " + KEY_DISTANCE + " AS " + KEY_DISTANCE + " , " + KEY_TARGETTYPE + " AS " + KEY_TARGETTYPE + " , " + KEY_BLINDSHOT + " AS " + KEY_BLINDSHOT + " FROM " + DATABASE_TABLE+ " WHERE " + KEY_DATE + " = '" + date + "'";
 		Log.d("ardunoid", query);
 		return db.rawQuery(query , null);
 	}
