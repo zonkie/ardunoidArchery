@@ -9,7 +9,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:columnCount="2"
+        android:columnCount="3"
         android:orientation="vertical" >
 
         <Button
@@ -226,6 +226,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/distance18m" />
+
         </RadioGroup>
         
         <RadioGroup 
@@ -250,8 +251,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/targetFita80x80" />
-
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Blindshot"
+                android:id="@+id/chkBlindshot"
+                android:layout_gravity="center"
+                android:layout_row="4"/>
             </RadioGroup>
+
+
+
     </GridLayout>
 
 </RelativeLayout>

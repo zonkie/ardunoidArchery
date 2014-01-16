@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.RadioGroup;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import de.ardunoid.archery2.R;
@@ -24,7 +25,11 @@ public class HitCount extends Activity {
 	DBAdapter db = new DBAdapter(this);
 	final Integer toastlength = 100; 
 	final String tag = "ardunoid";
-	@SuppressLint("SimpleDateFormat")
+    String Distance = "6";
+    String Targettype = "80x80";
+
+
+    @SuppressLint("SimpleDateFormat")
 	final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	
 	@Override
@@ -42,7 +47,7 @@ public class HitCount extends Activity {
 
 	
 	public boolean saveHit(Integer Points) {
-		
+
         String date = dateFormat.format(new Date());
 		String time= String.valueOf(c.get(Calendar.HOUR)) + ":" + String.valueOf(c.get(Calendar.MINUTE)) + ":" + String.valueOf(c.get(Calendar.SECOND));
 		RadioGroup distance = (RadioGroup) findViewById(R.id.radioDistance);
@@ -52,8 +57,28 @@ public class HitCount extends Activity {
 		try {
 			final Calendar c = Calendar.getInstance();
 			Context context = getApplicationContext();
+            Integer Blindshot = 0;
 
-			db.insertHit(String.valueOf(date), String.valueOf(time), Points);
+            RadioGroup radioDistance = (RadioGroup) findViewById(R.id.radioDistance);
+            Distance = ((RadioButton)findViewById(radioDistance.getCheckedRadioButtonId() )).getText().toString();
+            radioDistance.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+            {
+                public void onCheckedChanged(RadioGroup group, int checkedId) {
+                    Distance = ((RadioButton)findViewById(group.getCheckedRadioButtonId() )).getText().toString();
+                }
+            });
+
+
+            RadioGroup radioTarget = (RadioGroup) findViewById(R.id.radioTargetsize);
+            Targettype = ((RadioButton)findViewById(radioTarget.getCheckedRadioButtonId() )).getText().toString();
+            radioDistance.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+            {
+                public void onCheckedChanged(RadioGroup group, int checkedId) {
+                    Targettype = ((RadioButton)findViewById(group.getCheckedRadioButtonId() )).getText().toString();
+                }
+            });
+
+            db.insertHit(String.valueOf(date), String.valueOf(time), Points, Distance, Targettype, Blindshot); //@TODO: get Values from radiobuttons
 
 			Toast toast = Toast.makeText(context, "Hit Saved: " + Points + " Points" , toastlength);
 			toast.show();

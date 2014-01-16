@@ -17,14 +17,16 @@ public class DBAdapter {
 	public static final String KEY_SUM = "SUM";
 	public static final String KEY_COUNT = "COUNT";
 	public static final String KEY_DISTANCE = "DISTANCE";
-	public static final String KEY_TARGETTYPE = "TARGETTYPE";
+    public static final String KEY_TARGETTYPE = "TARGETTYPE";
+    public static final String KEY_BLINDSHOT = "BLINDSHOT";
+
 
 	
 	private static final String TAG = "DBAdapter";
 
 	private static final String DATABASE_NAME = "ardunoidarchery";
 	private static final String DATABASE_TABLE = "hits";
-	private static final int DATABASE_VERSION = 102; //Android manifest version == 1.0.2 
+	private static final int DATABASE_VERSION = 107; //Android manifest version == 1.0.7
 	
 
 	private static final String DATABASE_CREATE = "CREATE TABLE "
@@ -34,16 +36,26 @@ public class DBAdapter {
 		+ KEY_DATE + " TEXT NOT NULL, "
 		+ KEY_TIME + " TEXT NOT NULL ,"
 		+ KEY_DISTANCE + " TEXT NOT NULL, "
-		+ KEY_TARGETTYPE + " TEXT NOT NULL "
+		+ KEY_TARGETTYPE + " TEXT NOT NULL, "
+		+ KEY_BLINDSHOT + " TEXT NOT NULL "
 		+")";
-	
-	public static final String DATABASE_UPDATE_1_TO_102 = "UPDATE TABLE "
-		+ DATABASE_TABLE + " ADD COLUMN "
-		+ KEY_DISTANCE + " TEXT NOT NULL DEFAULT '0', "
-		+ KEY_TARGETTYPE + " TEXT NOT NULL DEFAULT '0' "
-		;
 
-	private final Context context;
+    public static final String DATABASE_UPDATE_1_TO_102_1 = "ALTER TABLE "
+            + DATABASE_TABLE + " ADD COLUMN "
+            + KEY_DISTANCE + " TEXT NOT NULL DEFAULT '0' "
+            ;
+    public static final String DATABASE_UPDATE_1_TO_102_2 = "ALTER TABLE "
+            + DATABASE_TABLE + " ADD COLUMN "
+            + KEY_TARGETTYPE + " TEXT NOT NULL DEFAULT '0' "
+            ;
+    public static final String DATABASE_UPDATE_102_TO_107 = "ALTER TABLE "
+            + DATABASE_TABLE + " ADD COLUMN "
+            + KEY_BLINDSHOT + " INT NOT NULL DEFAULT '0' "
+            ;
+
+
+
+    private final Context context;
 
 	private DatabaseHelper DBHelper;
 	private SQLiteDatabase db;
@@ -68,16 +80,16 @@ public class DBAdapter {
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 			if(oldVersion <= 1){
 				Log.d("test","Updating DB from version 1 to version 2");
-				db.execSQL(DATABASE_UPDATE_1_TO_102);
-				oldVersion=102;
-			}
-/*						if(oldVersion==102 || oldVersion==103){
+                db.execSQL(DATABASE_UPDATE_1_TO_102_1);
+                db.execSQL(DATABASE_UPDATE_1_TO_102_2);
+                oldVersion=102;
+            }
+            if(oldVersion==102 || oldVersion==103){
 				Log.d("test","Updating DB to version 4");
-				db.execSQL(DATABASE_UPDATE_TO_FOUR_pt1);
-				db.execSQL(DATABASE_UPDATE_TO_FOUR_pt2);
-				oldVersion = 104;
+				db.execSQL(DATABASE_UPDATE_102_TO_107);
+                oldVersion = 107;
 			}
-			if(oldVersion==104){
+			/*if(oldVersion==104){
 				Log.d("test","Updating DB to version 5");
 				db.execSQL(DATABASE_UPDATE_TO_FIVE);
 			}*/
@@ -96,15 +108,18 @@ public class DBAdapter {
 	}
 
 	// ---insert an Entry into the database---
-	public long insertHit(String Date, String Time, Integer Points) {
+	public long insertHit(String Date, String Time, Integer Points, String Distance, String Targettype, Integer blindshot) {
 		long retval;
 		try {
 			ContentValues initialValues = new ContentValues();
 			initialValues.put(KEY_DATE, "" + Date + "");
 			initialValues.put(KEY_TIME, "" + Time + "");
-			initialValues.put(KEY_VALUE, "" + Points + "");
-			retval = db.insert(DATABASE_TABLE, null, initialValues);
-		} catch (Exception e) {
+            initialValues.put(KEY_VALUE, "" + Points + "");
+            initialValues.put(KEY_DISTANCE, "" + Distance + "");
+            initialValues.put(KEY_TARGETTYPE, "" + Targettype + "");
+            initialValues.put(KEY_BLINDSHOT, "" + blindshot + "");
+            retval = db.insert(DATABASE_TABLE, null, initialValues);
+        } catch (Exception e) {
 			retval = 0;
 		}
 		return retval;
