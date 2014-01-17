@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.ardunoid.archery2"
+    android:versionCode="1"
+    android:versionName="1.0.2" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_archery"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="de.ardunoid.archery.HitCount"
+            android:label="@string/title_activity_hit_count" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="de.ardunoid.archery.About"
+            android:label="@string/action_about" >
+        </activity>
+        <activity
+            android:name="de.ardunoid.archery.StatsDayActivity"
+            android:label="@string/title_activity_stats_day" >
+        </activity>
+        <activity
+            android:name="de.ardunoid.archery.HitsDayActivity"
+            android:label="@string/title_activity_hits_day" >
+        </activity>
+        <activity
+            android:name="de.ardunoid.archery.StatsOverallGraph"
+            android:label="@string/title_activity_stats_overall_graph" >
+        </activity>
+        <activity
+            android:name="de.ardunoid.archery.TimerActivity"
+            android:label="@string/title_activity_timer" >
+        </activity>
+    </application>
+
+</manifest>
