@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.ardunoid.archery2"
-    android:versionCode="1"
-    android:versionName="1.0.2" >
+    android:versionCode="8"
+    android:versionName="1.0.8" >
 
     <uses-sdk
-        android:minSdkVersion="14"
+        android:minSdkVersion="7"
         android:targetSdkVersion="18" />
 
     <application

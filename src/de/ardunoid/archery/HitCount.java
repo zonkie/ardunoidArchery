@@ -67,7 +67,7 @@ public class HitCount extends Activity {
                     Distance = ((RadioButton)findViewById(group.getCheckedRadioButtonId() )).getText().toString();
                 }
             });
-
+ 
 
             RadioGroup radioTarget = (RadioGroup) findViewById(R.id.radioTargetsize);
             Targettype = ((RadioButton)findViewById(radioTarget.getCheckedRadioButtonId() )).getText().toString();

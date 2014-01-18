@@ -109,6 +109,7 @@ public class DBAdapter {
 
 	// ---insert an Entry into the database---
 	public long insertHit(String Date, String Time, Integer Points, String Distance, String Targettype, Integer blindshot) {
+		
 		long retval;
 		try {
 			ContentValues initialValues = new ContentValues();
@@ -228,5 +229,6 @@ public class DBAdapter {
 		Log.d("ardunoid", query);
 	    db.delete(table, whereClause, whereArgs);
 	}
-	
+
+
 }
