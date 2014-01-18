@@ -14,7 +14,8 @@
 	    android:id="@+id/action_timer"
         android:orderInCategory="200"
         android:showAsAction="never"
-        android:title="@string/action_timer"/>
+        android:title="@string/action_timer"
+        android:visible="false" />
 	<item
 	    android:id="@+id/action_about"
         android:orderInCategory="200"

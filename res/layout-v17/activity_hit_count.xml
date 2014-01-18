@@ -65,7 +65,8 @@
                 android:background="@color/WhiteSmoke"
                 android:minHeight="32dp"
                 android:onClick="onClickHit3"
-                android:text="@string/points3" />
+                android:text="@string/points3"
+                android:textColor="@color/black_overlay" />
 
             <Button
                 android:id="@+id/button4"
@@ -75,7 +76,8 @@
                 android:background="@color/WhiteSmoke"
                 android:minHeight="32dp"
                 android:onClick="onClickHit4"
-                android:text="@string/points4" />
+                android:text="@string/points4"
+                android:textColor="@color/black_overlay" />
 
             <Button
                 android:id="@+id/button5"
@@ -125,7 +127,8 @@
                 android:background="@color/Yellow"
                 android:minHeight="32dp"
                 android:onClick="onClickHit9"
-                android:text="@string/points9" />
+                android:text="@string/points9"
+                android:textColor="@color/black_overlay" />
 
             <Button
                 android:id="@+id/button10"
@@ -135,21 +138,15 @@
                 android:background="@color/Yellow"
                 android:minHeight="32dp"
                 android:onClick="onClickHit10"
-                android:text="@string/points10" />
-
+                android:text="@string/points10"
+                android:textColor="@color/black_overlay" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/textResultArrows"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
                 android:id="@+id/textArrows"
@@ -159,10 +156,10 @@
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
-                android:id="@+id/textResultPoints"
+                android:id="@+id/textResultArrows"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="12"
+                android:text=""
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
@@ -172,11 +169,24 @@
                 android:text="@string/score"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
+            <TextView
+                android:id="@+id/textResultPoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
             <RadioGroup
                 android:id="@+id/radioDistance"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                 >
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/lblDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/distance"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <RadioButton
                     android:id="@+id/distance6m"
@@ -204,19 +214,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
-                <RadioButton
-                    android:id="@+id/target3x20"
+                <TextView
+                    android:id="@+id/lblTarget"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left|center_vertical"
-                    android:checked="true"
-                    android:text="@string/targetFita3x20" />
+                    android:text="@string/target"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <RadioButton
                     android:id="@+id/target1x80"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/targetFita80x80" />
+                    android:checked="true"
+                    android:text="@string/targetFita1x80" />
+
+                <RadioButton
+                    android:id="@+id/target3x20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:text="@string/targetFita3x20" />
 
                 <CheckBox
                     android:id="@+id/chkBlindshot"
@@ -224,7 +241,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/Blindshot"
-                android:visibility="gone" />
+                    android:visibility="gone" />
             </RadioGroup>
         </LinearLayout>
     </LinearLayout>

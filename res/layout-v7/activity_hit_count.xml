@@ -136,20 +136,12 @@
                 android:minHeight="32dp"
                 android:onClick="onClickHit10"
                 android:text="@string/points10" />
-
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/textResultArrows"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
                 android:id="@+id/textArrows"
@@ -159,10 +151,10 @@
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
-                android:id="@+id/textResultPoints"
+                android:id="@+id/textResultArrows"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="12"
+                android:text=""
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
@@ -172,11 +164,24 @@
                 android:text="@string/score"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
+            <TextView
+                android:id="@+id/textResultPoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
             <RadioGroup
                 android:id="@+id/radioDistance"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                 >
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/lblDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/distance"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <RadioButton
                     android:id="@+id/distance6m"
@@ -204,19 +209,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
+                <TextView
+                    android:id="@+id/lblTarget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/target"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                <RadioButton
+                    android:id="@+id/target1x80"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/targetFita1x80"
+                    android:checked="true" />
                 <RadioButton
                     android:id="@+id/target3x20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left|center_vertical"
-                    android:checked="true"
                     android:text="@string/targetFita3x20" />
 
-                <RadioButton
-                    android:id="@+id/target1x80"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/targetFita80x80" />
+
 
                 <CheckBox
                     android:id="@+id/chkBlindshot"
@@ -224,7 +236,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/Blindshot"
-                android:visibility="gone" />
+                    android:visibility="gone" />
             </RadioGroup>
         </LinearLayout>
     </LinearLayout>
