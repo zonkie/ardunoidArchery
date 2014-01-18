@@ -202,23 +202,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int distance12m=0x7f090018;
         public static final int distance18m=0x7f090019;
         public static final int distance6m=0x7f090017;
-        public static final int lblBlindshot=0x7f090021;
+        public static final int lblBlindshot=0x7f090022;
         public static final int radioDistance=0x7f090016;
         public static final int radioTargetsize=0x7f09001a;
         public static final int section_label=0x7f090028;
         public static final int target1x80=0x7f09001c;
         public static final int target3x20=0x7f09001b;
         public static final int textArrows=0x7f090013;
-        public static final int textBlindshot=0x7f090022;
+        public static final int textBlindshot=0x7f090023;
         public static final int textCount=0x7f090024;
         public static final int textDate=0x7f09001e;
-        public static final int textDistance=0x7f09001f;
+        public static final int textDistance=0x7f090020;
         public static final int textPoints=0x7f090015;
         public static final int textResultArrows=0x7f090012;
         public static final int textResultPoints=0x7f090014;
-        public static final int textScore=0x7f090023;
+        public static final int textScore=0x7f09001f;
         public static final int textSum=0x7f090025;
-        public static final int textTargettype=0x7f090020;
+        public static final int textTargettype=0x7f090021;
         public static final int textView1=0x7f090000;
         public static final int textView3=0x7f090004;
         public static final int txtTimeleft=0x7f090002;
@@ -325,10 +325,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f070001;
-        public static final int ButtonBar=0x7f070003;
-        public static final int ButtonBarButton=0x7f070004;
-        public static final int FullscreenActionBarStyle=0x7f070005;
-        public static final int FullscreenTheme=0x7f070002;
+        public static final int ButtonBar=0x7f070004;
+        public static final int ButtonBarButton=0x7f070005;
+        public static final int FullscreenActionBarStyle=0x7f070006;
+        public static final int FullscreenTheme=0x7f070003;
+        public static final int Holo=0x7f070002;
     }
     public static final class styleable {
         /** 

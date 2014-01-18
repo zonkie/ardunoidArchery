@@ -40,7 +40,7 @@ public class HitCount extends Activity {
 		try{
 			updateHits();
 		} catch (Exception e) {
-			Log.e("ardunoid", e.getMessage().toString());
+			Log.e("ardunoid", "Failed to Update Hits");
 		}
 	}
 
