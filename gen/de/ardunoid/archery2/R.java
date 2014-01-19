@@ -202,7 +202,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int distance12m=0x7f090019;
         public static final int distance18m=0x7f09001a;
         public static final int distance6m=0x7f090018;
-        public static final int lblBlindshot=0x7f090024;
+        public static final int lblBlindshot=0x7f090023;
         public static final int lblDistance=0x7f090017;
         public static final int lblTarget=0x7f09001c;
         public static final int radioDistance=0x7f090016;
@@ -212,16 +212,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int target1x80=0x7f09001d;
         public static final int target3x20=0x7f09001e;
         public static final int textArrows=0x7f090012;
-        public static final int textBlindshot=0x7f090025;
+        public static final int textBlindshot=0x7f090024;
         public static final int textCount=0x7f090026;
         public static final int textDate=0x7f090020;
-        public static final int textDistance=0x7f090022;
+        public static final int textDistance=0x7f090021;
         public static final int textPoints=0x7f090014;
         public static final int textResultArrows=0x7f090013;
         public static final int textResultPoints=0x7f090015;
-        public static final int textScore=0x7f090021;
+        public static final int textScore=0x7f090025;
         public static final int textSum=0x7f090027;
-        public static final int textTargettype=0x7f090023;
+        public static final int textTargettype=0x7f090022;
         public static final int textView1=0x7f090000;
         public static final int textView3=0x7f090004;
         public static final int txtTimeleft=0x7f090002;
@@ -245,6 +245,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class string {
         public static final int Blindshot=0x7f060024;
         /**  About 
+ About 
          */
         public static final int action_about=0x7f060029;
         public static final int action_hitcount=0x7f060004;

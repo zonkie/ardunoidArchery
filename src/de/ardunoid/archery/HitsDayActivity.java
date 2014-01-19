@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 public class HitsDayActivity extends ListActivity {
 
-	private DBAdapter DBAdapter;
+	private DBAdapter db;
 	private Cursor mHitsCursor;
 	
 	@Override
@@ -40,10 +40,10 @@ public class HitsDayActivity extends ListActivity {
 			Bundle bundle = getIntent().getExtras();
 			date = bundle.getString(de.ardunoid.archery.DBAdapter.KEY_DATE);
 			Log.d("ardunoid", date);
-			DBAdapter = new DBAdapter(this);
-			DBAdapter.open();
+			db = new DBAdapter(this);
+            db.open();	
 			fillData(date);
-			DBAdapter.close();
+			db.close();
 		} catch (Exception e) {
 			Context context = getApplicationContext();
 			CharSequence text = "I'm sorry, there was en Error reading the latest Entry from the Database!";
@@ -75,13 +75,14 @@ public class HitsDayActivity extends ListActivity {
 	    			new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog,int id) {
 							try {
-								DBAdapter.open();
-								DBAdapter.deleteEntry(entryId);
+    							db.open();	
+								db.deleteEntry(entryId);
+								db.close();
 								fillData(date); //reload data after Delete...
+								
 						    } catch(Exception e) {
 						    	Log.e("ardunoid", "Could not delete entry: " + e.getMessage().toString());
 						    }
-
 						}
 	    			}
 				).show();
@@ -98,18 +99,17 @@ public class HitsDayActivity extends ListActivity {
 
 	@SuppressWarnings("deprecation")
 	private void fillData(String date) {
-		
 		// Get all of the rows from the database and create the item list
-		DBAdapter.open();
-
-		mHitsCursor = DBAdapter.getHitsByDate(date);
+		db.open();	
+		mHitsCursor = db.getHitsByDate(date);
 		startManagingCursor(mHitsCursor);
 		
-		String[] from = new String[] { de.ardunoid.archery.DBAdapter.KEY_DATE, de.ardunoid.archery.DBAdapter.KEY_VALUE, de.ardunoid.archery.DBAdapter.KEY_DISTANCE, de.ardunoid.archery.DBAdapter.KEY_TARGETTYPE}; //, de.ardunoid.archery.DBAdapter.KEY_BLINDSHOT 
-		int[] to = new int[] { R.id.textDate, R.id.textScore, R.id.textDistance, R.id.textTargettype};//, R.id.textBlindshot
+		String[] from = new String[] { de.ardunoid.archery.DBAdapter.KEY_DATE, de.ardunoid.archery.DBAdapter.KEY_VALUE, de.ardunoid.archery.DBAdapter.KEY_DISTANCE, de.ardunoid.archery.DBAdapter.KEY_TARGETTYPE, de.ardunoid.archery.DBAdapter.KEY_BLINDSHOT};  
+		int[] to = new int[] { R.id.textDate, R.id.textScore, R.id.textDistance, R.id.textTargettype,R.id.textBlindshot};
 		// Now create a simple cursor adapter and set it to display
 		SimpleCursorAdapter notes = new SimpleCursorAdapter(this, R.layout.activity_hits_day, mHitsCursor, from, to);
 		setListAdapter(notes);
+		db.close();
 	}
 
 
@@ -119,5 +119,14 @@ public class HitsDayActivity extends ListActivity {
 		getMenuInflater().inflate(R.menu.stats_day, menu);
 		return true;
 	}
+	
+	@Override
+	public void onResume() {
+	    super.onResume();
+	}
 
+	@Override
+	public void onPause() {
+	    super.onPause();
+	}
 }

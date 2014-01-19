@@ -6,6 +6,7 @@ import java.util.Date;
 
 import android.R.integer;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -15,6 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.RadioGroup;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -32,7 +34,7 @@ public class HitCount extends Activity {
 
 	String Distance = "6 m";
 	String Targettype = "1x80";
-	String Blindshot = "0";
+	int Blindshot = 0;
 	
 	@SuppressLint("SimpleDateFormat")
 	final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -47,7 +49,7 @@ public class HitCount extends Activity {
 		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 		Distance = settings.getString("Distance", "6 m");
 		Targettype = settings.getString("Targettype","1x80");
-		Blindshot = settings.getString("Blindshot","0");
+		Blindshot = settings.getInt("Blindshot",0);
 
 		try {
 			updateHits();
@@ -57,16 +59,23 @@ public class HitCount extends Activity {
 	}
 
 	public boolean saveHit(Integer Points) {
+		//Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
 		String date = dateFormat.format(new Date());
 		String time = String.valueOf(c.get(Calendar.HOUR)) + ":" + String.valueOf(c.get(Calendar.MINUTE)) + ":" + String.valueOf(c.get(Calendar.SECOND));
+		
 		RadioGroup radioDistance = (RadioGroup) findViewById(R.id.radioDistance);
 		RadioGroup radioTarget = (RadioGroup) findViewById(R.id.radioTargetsize);
-		
-		db.open();
+		CheckBox chkBlindshot = (CheckBox)findViewById(R.id.chkBlindshot);
+
 		try {
 			Context context = getApplicationContext();
 			Integer Blindshot = 0;
-
+			Boolean blindshotChecked = chkBlindshot.isChecked();
+			if(blindshotChecked == true) {
+				Blindshot = 1;				
+			}
+			
 			Distance = ((RadioButton) findViewById(radioDistance.getCheckedRadioButtonId())).getText().toString();
 			radioDistance.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 				public void onCheckedChanged(RadioGroup group,int checkedId) {
@@ -87,21 +96,27 @@ public class HitCount extends Activity {
 					SharedPreferences.Editor editor = settings.edit();
 					editor.putString("Targettype", Targettype);
 					editor.commit();
-
 				}
 			});
-
+			db.open();
 			db.insertHit(String.valueOf(date), String.valueOf(time), Points, Distance, Targettype, Blindshot); // @TODO: get Values from radiobuttons
-
+			db.close();
 			Toast toast = Toast.makeText(context, "Hit Saved: " + Points + " Points", toastlength);
 			toast.show();
+			
 
 		} catch (Exception e) {
 			Context context = getApplicationContext();
 			Toast toast = Toast.makeText(context, "Could not insert the hit.", toastlength);
 			toast.show();
+		} 
+
+		try {
+			//v.vibrate(10);
+		} catch (Exception e) {
+			// Couldn't vibrate. 2/10 would not bang.
 		}
-		db.close();
+
 
 		try {
 			updateHits();
@@ -118,7 +133,7 @@ public class HitCount extends Activity {
 	}
 
 	public void updateHits() {
-		db.open();
+
 		String date = dateFormat.format(new Date());
 		TextView txtResultArrows = (TextView) findViewById(R.id.textResultArrows);
 		TextView txtResultPoints = (TextView) findViewById(R.id.textResultPoints);
@@ -126,11 +141,12 @@ public class HitCount extends Activity {
 		int resultPoints = -1;
 
 		try {
+			db.open();	
 			resultArrows = db.getArrowsByDate(date);
 			resultPoints = db.getPointsByDate(date);
+			db.close();
 		} catch (Exception e) {
-			Log.e("ardunoid", "Error updating Stats. "
-					+ e.getMessage().toString());
+			Log.e("ardunoid", "Error updating Stats. " + e.getMessage().toString());
 		}
 		try {
 			txtResultArrows.setText(String.valueOf(resultArrows));
@@ -138,7 +154,6 @@ public class HitCount extends Activity {
 		} catch (Exception e) {
 			Log.e("ardunoid", "Error updating textfields. " + e.getMessage().toString());
 		}
-		db.close();
 	}
 
 	public void onClickHitWall(final View view) {
@@ -223,4 +238,12 @@ public class HitCount extends Activity {
 
 	}
 
+	@Override
+	public void onResume() {
+	    super.onResume();
+	}
+	@Override
+	public void onPause() {
+	    super.onPause();
+	}
 }

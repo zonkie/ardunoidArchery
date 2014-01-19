@@ -59,7 +59,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Blindshot"
                 android:layout_gravity="center"
-                android:visibility="gone" />
+                />
+
         </LinearLayout>
 
         <LinearLayout

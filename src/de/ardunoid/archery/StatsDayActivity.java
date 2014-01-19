@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class StatsDayActivity extends ListActivity {
 
-	private DBAdapter DBAdapter;
+	private DBAdapter db;
 	private Cursor mNotesCursor;
 
 	private static final int ACTIVITY_EDIT_DAY = 1;
@@ -27,8 +27,7 @@ public class StatsDayActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_stats_day);
 		try {
-			DBAdapter = new DBAdapter(this);
-			DBAdapter.open();
+			db = new DBAdapter(this);
 			fillData();
 			//DBAdapter.close();
 		} catch (Exception e) {
@@ -38,8 +37,9 @@ public class StatsDayActivity extends ListActivity {
 			Log.e("ardunoid", text.toString() + " " + e.getMessage().toString());
 			Toast toast = Toast.makeText(context, text, duration);
 			toast.show();
+		} finally {
+			
 		}
-
 	}
 
 	@Override
@@ -57,10 +57,11 @@ public class StatsDayActivity extends ListActivity {
 	    startActivityForResult(i, ACTIVITY_EDIT_DAY);
 	}
 	
+	@SuppressWarnings("deprecation")
 	private void fillData() {
-		
+		db.open();	
 		// Get all of the rows from the database and create the item list
-		mNotesCursor = DBAdapter.getStatsGroupedBy(1); //1=by date
+		mNotesCursor = db.getStatsGroupedBy(1); //1=by date
 		startManagingCursor(mNotesCursor);
 
 		String[] from = new String[] { de.ardunoid.archery.DBAdapter.KEY_DATE, de.ardunoid.archery.DBAdapter.KEY_COUNT, de.ardunoid.archery.DBAdapter.KEY_SUM };
@@ -69,6 +70,7 @@ public class StatsDayActivity extends ListActivity {
 		@SuppressWarnings("deprecation")
 		SimpleCursorAdapter notes = new SimpleCursorAdapter(this, R.layout.activity_stats_day, mNotesCursor, from, to);
 		setListAdapter(notes);
+		db.close();
 	}
 
 
@@ -78,5 +80,23 @@ public class StatsDayActivity extends ListActivity {
 		getMenuInflater().inflate(R.menu.stats_day, menu);
 		return true;
 	}
+
+
+	@Override
+	public void onResume() {
+	    super.onResume();
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Override
+	public void onPause() {
+	    super.onPause();
+	    try{
+	    	stopManagingCursor(mNotesCursor);
+	    } catch (Exception e){
+	    	
+	    }
+	}
+
 
 }

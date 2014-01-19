@@ -29,7 +29,6 @@
 	        android:text="@string/score" />
 	
 
-
 </GridLayout>
 
 

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.ardunoid.archery2"
-    android:versionCode="8"
-    android:versionName="1.0.8" >
+    android:versionCode="9"
+    android:versionName="1.0.9" >
 
     <uses-sdk
         android:minSdkVersion="7"
         android:targetSdkVersion="18" />
-
+	<!-- uses-permission
+	    android:name="android.permission.VIBRATE" /-->
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_archery"
@@ -18,7 +20,6 @@
             android:label="@string/title_activity_hit_count" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -241,7 +241,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/Blindshot"
-                    android:visibility="gone" />
+                    />
             </RadioGroup>
         </LinearLayout>
     </LinearLayout>

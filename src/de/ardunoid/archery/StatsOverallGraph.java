@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class StatsOverallGraph extends ListActivity {
 
-	private DBAdapter DBAdapter;
+	private DBAdapter db;
 	private Cursor mNotesCursor;
 
 	private static final int ACTIVITY_EDIT_DAY = 1;
@@ -27,8 +27,12 @@ public class StatsOverallGraph extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_stats_day);
 		try {
-			DBAdapter = new DBAdapter(this);
-			DBAdapter.open();
+			db = new DBAdapter(this);
+			try {
+				db.open();	
+			} catch (Exception e) {
+				// Log.e("Cursor already opened...");
+			}
 			getData();
 			//pass Data to Graph library
 			
@@ -62,7 +66,7 @@ public class StatsOverallGraph extends ListActivity {
 	private void getData() {
 		
 		// Get all of the rows from the database and create the item list
-		mNotesCursor = DBAdapter.getStatsOverall(); //1=by date
+		mNotesCursor = db.getStatsOverall(); //1=by date
 		startManagingCursor(mNotesCursor);
 
 		String[] from = new String[] { de.ardunoid.archery.DBAdapter.KEY_DATE, de.ardunoid.archery.DBAdapter.KEY_COUNT, de.ardunoid.archery.DBAdapter.KEY_SUM };
@@ -79,6 +83,24 @@ public class StatsOverallGraph extends ListActivity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.stats_day, menu);
 		return true;
+	}
+	@Override
+	public void onResume() {
+	    super.onResume();
+	    try{
+	    	db.open();
+	    } catch(Exception e){
+	    	
+	    }
+	}
+	@Override
+	public void onPause() {
+	    super.onPause();
+	    try{
+	    	db.close();
+	    } catch(Exception e){
+	    	
+	    }
 	}
 
 }

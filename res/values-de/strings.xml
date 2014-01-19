@@ -3,23 +3,23 @@
 
     <string name="app_name">ardunoid|Archery 2</string>
     <string name="title_activity_hit_count">ardunoid|Archery 2</string>
-    <string name="action_settings">Settings</string>
-    <string name="action_stats">Stats</string>
-    <string name="action_hitcount">Hits</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="action_stats">Statistiken</string>
+    <string name="action_hitcount">Treffer</string>
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_stats">Statistics</string>
-    <string name="title_statsOverview">Overall</string>
-    <string name="title_statsDay">single Day</string>
-    <string name="title_statsComplete">Detailed overall</string>
-    <string name="title_activity_stats_day">Scores/arrows by day</string>
-    <string name="title_activity_hits_day">Daily Overview</string>
-    <string name="title_activity_stats_overall_graph">Overall Stats</string>
-    <string name="date">Date</string>
-    <string name="score">Score</string>
-    <string name="arrows">Arrows</string>
+    <string name="title_activity_stats">Statistiken</string>
+    <string name="title_statsOverview">Gesamt</string>
+    <string name="title_statsDay">Tagesansicht</string>
+    <string name="title_statsComplete">Detailansicht gesamt</string>
+    <string name="title_activity_stats_day">Punkte/Pfeile pro Tag</string>
+    <string name="title_activity_hits_day">Tagesübersicht</string>
+    <string name="title_activity_stats_overall_graph">Gesamtstatistik</string>
+    <string name="date">Datum</string>
+    <string name="score">Punkte</string>
+    <string name="arrows">Pfeile</string>
     
-    <string name="points">Points</string>
-    <string name="pointsWall">Wall</string>
+    <string name="points">Punkte</string>
+    <string name="pointsWall">Wand</string>
     <string name="points0">0</string>
     <string name="points1">1</string>
     <string name="points2">2</string>
@@ -32,16 +32,16 @@
     <string name="points9">9</string>
     <string name="points10">10</string>
     
-    <string name="distance">Distance</string>
+    <string name="distance">Entfernung</string>
     <string name="distance6m">6 m</string>
     <string name="distance12m">12 m</string>
     <string name="distance18m">18 m</string>
 
-    <string name="target">Targettype</string>
+    <string name="target">Zielscheibe</string>
     <string name="targetFita3x20">3x20cm</string>
     <string name="targetFita1x80">1x80cm</string>
     
-    <string name="Blindshot">Blindshot</string>
+    <string name="Blindshot">Blindschuss</string>
     
     <string name="stop">Stop</string>
     <string name="start">Start</string>
@@ -59,10 +59,10 @@
     <string name="txtAboutWebValue">android.de</string>
     
     
-    <string name="txtDialogDeleteHead">Delete?</string>
-    <string name="txtDialogDeleteMessage">Delete this Entry</string>
-    <string name="txtDialogBtnNegative">Nope!</string>
-    <string name="txtDialogBrnPositive">Yep!</string>
+    <string name="txtDialogDeleteHead">Löschen?</string>
+    <string name="txtDialogDeleteMessage">Diesen eintrag löschen</string>
+    <string name="txtDialogBtnNegative">Nein</string>
+    <string name="txtDialogBrnPositive">Ja</string>
     
 
 </resources>
