@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -67,7 +68,8 @@ public class HitCount extends Activity {
 		RadioGroup radioDistance = (RadioGroup) findViewById(R.id.radioDistance);
 		RadioGroup radioTarget = (RadioGroup) findViewById(R.id.radioTargetsize);
 		CheckBox chkBlindshot = (CheckBox)findViewById(R.id.chkBlindshot);
-
+		EditText shotComment = (EditText)findViewById(R.id.shotComment);
+		
 		try {
 			Context context = getApplicationContext();
 			Integer Blindshot = 0;
@@ -98,16 +100,23 @@ public class HitCount extends Activity {
 					editor.commit();
 				}
 			});
+			
+			String comment = shotComment.getText().toString();
+			
 			db.open();
-			db.insertHit(String.valueOf(date), String.valueOf(time), Points, Distance, Targettype, Blindshot); // @TODO: get Values from radiobuttons
+			db.insertHit(String.valueOf(date), String.valueOf(time), Points, Distance, Targettype, Blindshot, comment);
 			db.close();
-			Toast toast = Toast.makeText(context, "Hit Saved: " + Points + " Points", toastlength);
+
+			String toastWinPlain = getResources().getString(R.string.saveHitXPoints);
+			String toastWin = String.format(toastWinPlain, String.valueOf(Points));
+			Toast toast = Toast.makeText(context, toastWin, toastlength);
 			toast.show();
+			shotComment.setText("");
 			
 
 		} catch (Exception e) {
 			Context context = getApplicationContext();
-			Toast toast = Toast.makeText(context, "Could not insert the hit.", toastlength);
+			Toast toast = Toast.makeText(context, getResources().getString(R.string.saveHitFailed) , toastlength);
 			toast.show();
 		} 
 

@@ -176,13 +176,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int action_about=0x7f09002f;
-        public static final int action_hitcount=0x7f090030;
-        public static final int action_settings=0x7f09002c;
-        public static final int action_stats=0x7f09002d;
-        public static final int action_timer=0x7f09002e;
-        public static final int btnTimerStart=0x7f090029;
-        public static final int btnTimerStop=0x7f09002a;
+        public static final int action_about=0x7f090032;
+        public static final int action_hitcount=0x7f090033;
+        public static final int action_settings=0x7f09002f;
+        public static final int action_stats=0x7f090030;
+        public static final int action_timer=0x7f090031;
+        public static final int btnTimerStart=0x7f09002c;
+        public static final int btnTimerStop=0x7f09002d;
         public static final int button0=0x7f090007;
         public static final int button1=0x7f090008;
         public static final int button10=0x7f090011;
@@ -202,26 +202,29 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int distance12m=0x7f090019;
         public static final int distance18m=0x7f09001a;
         public static final int distance6m=0x7f090018;
-        public static final int lblBlindshot=0x7f090023;
+        public static final int lblBlindshot=0x7f090025;
+        public static final int lblComment=0x7f090020;
         public static final int lblDistance=0x7f090017;
         public static final int lblTarget=0x7f09001c;
         public static final int radioDistance=0x7f090016;
         public static final int radioTargetsize=0x7f09001b;
-        public static final int section_label=0x7f09002b;
-        public static final int tableRow1=0x7f090028;
+        public static final int section_label=0x7f09002e;
+        public static final int shotComment=0x7f090021;
+        public static final int tableRow1=0x7f09002b;
         public static final int target1x80=0x7f09001d;
         public static final int target3x20=0x7f09001e;
         public static final int textArrows=0x7f090012;
-        public static final int textBlindshot=0x7f090024;
-        public static final int textCount=0x7f090026;
-        public static final int textDate=0x7f090020;
-        public static final int textDistance=0x7f090021;
+        public static final int textBlindshot=0x7f090026;
+        public static final int textComment=0x7f090028;
+        public static final int textCount=0x7f090029;
+        public static final int textDate=0x7f090022;
+        public static final int textDistance=0x7f090023;
         public static final int textPoints=0x7f090014;
         public static final int textResultArrows=0x7f090013;
         public static final int textResultPoints=0x7f090015;
-        public static final int textScore=0x7f090025;
-        public static final int textSum=0x7f090027;
-        public static final int textTargettype=0x7f090022;
+        public static final int textScore=0x7f090027;
+        public static final int textSum=0x7f09002a;
+        public static final int textTargettype=0x7f090024;
         public static final int textView1=0x7f090000;
         public static final int textView3=0x7f090004;
         public static final int txtTimeleft=0x7f090002;
@@ -254,12 +257,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int action_timer=0x7f060028;
         public static final int app_name=0x7f060000;
         public static final int arrows=0x7f06000f;
+        public static final int comment=0x7f060034;
         public static final int date=0x7f06000d;
         public static final int distance=0x7f06001d;
         public static final int distance12m=0x7f06001f;
         public static final int distance18m=0x7f060020;
         public static final int distance6m=0x7f06001e;
         public static final int hello_world=0x7f060005;
+        public static final int hintComment=0x7f060035;
         public static final int points=0x7f060010;
         public static final int points0=0x7f060012;
         public static final int points1=0x7f060013;
@@ -273,6 +278,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int points8=0x7f06001a;
         public static final int points9=0x7f06001b;
         public static final int pointsWall=0x7f060011;
+        public static final int saveHitFailed=0x7f060037;
+        /**   toasts 
+  toasts 
+         */
+        public static final int saveHitXPoints=0x7f060036;
         public static final int score=0x7f06000e;
         public static final int start=0x7f060026;
         public static final int stop=0x7f060025;

@@ -64,5 +64,13 @@
     <string name="txtDialogBtnNegative">Nope!</string>
     <string name="txtDialogBrnPositive">Yep!</string>
     
+    <string name="comment">Comment</string>
+    <string name="hintComment">Comment for this shot</string>
+    
+    <!--  toasts -->
+   	<string name="saveHitXPoints">saved hit: %s points!</string>
+   	<string name="saveHitFailed">save hit failed :(</string>
+    
+    
 
 </resources>

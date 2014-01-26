@@ -1,244 +1,272 @@
 <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
     android:gravity="center_horizontal"
+    android:overScrollMode="ifContentScrolls"
+    android:scrollbarStyle="insideInset"
+    android:scrollbars="horizontal"
+    android:visibility="visible"
     tools:context=".HitCount" >
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="horizontal" >
+        android:layout_height="fill_parent" >
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-
-            <Button
-                android:id="@+id/buttonWall"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.12"
-                android:background="@color/Gray"
-                android:minHeight="32dp"
-                android:onClick="onClickHitWall"
-                android:text="@string/pointsWall" />
-
-            <Button
-                android:id="@+id/button0"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.12"
-                android:background="@color/Gray"
-                android:minHeight="32dp"
-                android:onClick="onClickHit0"
-                android:text="@string/points0" />
-
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.12"
-                android:background="@color/Black"
-                android:minHeight="32dp"
-                android:onClick="onClickHit1"
-                android:text="@string/points1"
-                android:textColor="@color/WhiteSmoke" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.12"
-                android:background="@color/Black"
-                android:minHeight="32dp"
-                android:onClick="onClickHit2"
-                android:text="@string/points2"
-                android:textColor="@color/WhiteSmoke" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.12"
-                android:background="@color/WhiteSmoke"
-                android:minHeight="32dp"
-                android:onClick="onClickHit3"
-                android:text="@string/points3" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.12"
-                android:background="@color/WhiteSmoke"
-                android:minHeight="32dp"
-                android:onClick="onClickHit4"
-                android:text="@string/points4" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.12"
-                android:background="@color/LightBlue"
-                android:minHeight="32dp"
-                android:onClick="onClickHit5"
-                android:text="@string/points5" />
-
-            <Button
-                android:id="@+id/button6"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.12"
-                android:background="@color/LightBlue"
-                android:minHeight="32dp"
-                android:onClick="onClickHit6"
-                android:text="@string/points6" />
-
-            <Button
-                android:id="@+id/button7"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.12"
-                android:background="@color/Red"
-                android:minHeight="32dp"
-                android:onClick="onClickHit7"
-                android:text="@string/points7" />
-
-            <Button
-                android:id="@+id/button8"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.12"
-                android:background="@color/Red"
-                android:minHeight="32dp"
-                android:onClick="onClickHit8"
-                android:text="@string/points8" />
-
-            <Button
-                android:id="@+id/button9"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.12"
-                android:background="@color/Yellow"
-                android:minHeight="32dp"
-                android:onClick="onClickHit9"
-                android:text="@string/points9" />
-
-            <Button
-                android:id="@+id/button10"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.12"
-                android:background="@color/Yellow"
-                android:minHeight="32dp"
-                android:onClick="onClickHit10"
-                android:text="@string/points10" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layoutMode="opticalBounds"
+            android:orientation="horizontal" >
 
-            <TextView
-                android:id="@+id/textArrows"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/buttonWall"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.12"
+                    android:background="@color/Gray"
+                    android:minHeight="32dp"
+                    android:onClick="onClickHitWall"
+                    android:text="@string/pointsWall" />
+
+                <Button
+                    android:id="@+id/button0"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.12"
+                    android:background="@color/Gray"
+                    android:minHeight="32dp"
+                    android:onClick="onClickHit0"
+                    android:text="@string/points0" />
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.12"
+                    android:background="@color/Black"
+                    android:minHeight="32dp"
+                    android:onClick="onClickHit1"
+                    android:text="@string/points1"
+                    android:textColor="@color/WhiteSmoke" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.12"
+                    android:background="@color/Black"
+                    android:minHeight="32dp"
+                    android:onClick="onClickHit2"
+                    android:text="@string/points2"
+                    android:textColor="@color/WhiteSmoke" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.12"
+                    android:background="@color/WhiteSmoke"
+                    android:minHeight="32dp"
+                    android:onClick="onClickHit3"
+                    android:text="@string/points3" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.12"
+                    android:background="@color/WhiteSmoke"
+                    android:minHeight="32dp"
+                    android:onClick="onClickHit4"
+                    android:text="@string/points4" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.12"
+                    android:background="@color/LightBlue"
+                    android:minHeight="32dp"
+                    android:onClick="onClickHit5"
+                    android:text="@string/points5" />
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.12"
+                    android:background="@color/LightBlue"
+                    android:minHeight="32dp"
+                    android:onClick="onClickHit6"
+                    android:text="@string/points6" />
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.12"
+                    android:background="@color/Red"
+                    android:minHeight="32dp"
+                    android:onClick="onClickHit7"
+                    android:text="@string/points7" />
+
+                <Button
+                    android:id="@+id/button8"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.12"
+                    android:background="@color/Red"
+                    android:minHeight="32dp"
+                    android:onClick="onClickHit8"
+                    android:text="@string/points8" />
+
+                <Button
+                    android:id="@+id/button9"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.12"
+                    android:background="@color/Yellow"
+                    android:minHeight="32dp"
+                    android:onClick="onClickHit9"
+                    android:text="@string/points9" />
+
+                <Button
+                    android:id="@+id/button10"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.12"
+                    android:background="@color/Yellow"
+                    android:minHeight="32dp"
+                    android:onClick="onClickHit10"
+                    android:text="@string/points10" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/arrows"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
-            <TextView
-                android:id="@+id/textResultArrows"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
-            <TextView
-                android:id="@+id/textPoints"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/score"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
-            <TextView
-                android:id="@+id/textResultPoints"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
-            <RadioGroup
-                android:id="@+id/radioDistance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/lblDistance"
+                    android:id="@+id/textArrows"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/distance"
+                    android:text="@string/arrows"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
-
-                <RadioButton
-                    android:id="@+id/distance6m"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left|center_vertical"
-                    android:checked="true"
-                    android:text="@string/distance6m" />
-
-                <RadioButton
-                    android:id="@+id/distance12m"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/distance12m" />
-
-                <RadioButton
-                    android:id="@+id/distance18m"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/distance18m" />
-            </RadioGroup>
-
-            <RadioGroup
-                android:id="@+id/radioTargetsize"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
 
                 <TextView
-                    android:id="@+id/lblTarget"
+                    android:id="@+id/textResultArrows"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/target"
+                    android:text=""
                     android:textAppearance="?android:attr/textAppearanceSmall" />
-                <RadioButton
-                    android:id="@+id/target1x80"
+
+                <TextView
+                    android:id="@+id/textPoints"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/targetFita1x80"
-                    android:checked="true" />
-                <RadioButton
-                    android:id="@+id/target3x20"
+                    android:text="@string/score"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <TextView
+                    android:id="@+id/textResultPoints"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left|center_vertical"
-                    android:text="@string/targetFita3x20" />
+                    android:text=""
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
 
+                <RadioGroup
+                    android:id="@+id/radioDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
 
+                    <TextView
+                        android:id="@+id/lblDistance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/distance"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
 
-                <CheckBox
-                    android:id="@+id/chkBlindshot"
+                    <RadioButton
+                        android:id="@+id/distance6m"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:checked="true"
+                        android:text="@string/distance6m" />
+
+                    <RadioButton
+                        android:id="@+id/distance12m"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/distance12m" />
+
+                    <RadioButton
+                        android:id="@+id/distance18m"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/distance18m" />
+                </RadioGroup>
+
+                <RadioGroup
+                    android:id="@+id/radioTargetsize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/lblTarget"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/target"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <RadioButton
+                        android:id="@+id/target1x80"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/targetFita1x80" />
+
+                    <RadioButton
+                        android:id="@+id/target3x20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:text="@string/targetFita3x20" />
+
+                    <CheckBox
+                        android:id="@+id/chkBlindshot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/Blindshot" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/lblComment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/Blindshot"
-                    android:visibility="gone" />
-            </RadioGroup>
+                    android:text="@string/comment"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <EditText
+                    android:id="@+id/shotComment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.58"
+                    android:ems="10"
+                    android:inputType="text" >
+
+                    <requestFocus />
+                </EditText>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

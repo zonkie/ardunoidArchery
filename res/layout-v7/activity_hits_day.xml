@@ -49,18 +49,16 @@
                 android:id="@+id/lblBlindshot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Blindshot"
                 android:layout_gravity="center"
+                android:text="@string/Blindshot"
                 android:visibility="gone" />
 
             <TextView
                 android:id="@+id/textBlindshot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Blindshot"
                 android:layout_gravity="center"
-                />
-
+                android:text="@string/Blindshot" />
         </LinearLayout>
 
         <LinearLayout
@@ -72,9 +70,15 @@
                 android:id="@+id/textScore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/score"
                 android:layout_gravity="right"
+                android:text="@string/score"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/textComment"
+                android:text="@string/comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
     </LinearLayout>
 

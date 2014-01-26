@@ -19,6 +19,7 @@ public class DBAdapter {
 	public static final String KEY_DISTANCE = "DISTANCE";
     public static final String KEY_TARGETTYPE = "TARGETTYPE";
     public static final String KEY_BLINDSHOT = "BLINDSHOT";
+    public static final String KEY_COMMENT = "COMMENT";
 
 
 	
@@ -26,7 +27,7 @@ public class DBAdapter {
 
 	private static final String DATABASE_NAME = "ardunoidarchery";
 	private static final String DATABASE_TABLE = "hits";
-	private static final int DATABASE_VERSION = 107; //Android manifest version == 1.0.7
+	private static final int DATABASE_VERSION = 110; //Android manifest version == 1.0.7
 	
 
 	private static final String DATABASE_CREATE = "CREATE TABLE "
@@ -37,7 +38,8 @@ public class DBAdapter {
 		+ KEY_TIME + " TEXT NOT NULL ,"
 		+ KEY_DISTANCE + " TEXT NOT NULL, "
 		+ KEY_TARGETTYPE + " TEXT NOT NULL, "
-		+ KEY_BLINDSHOT + " TEXT NOT NULL "
+		+ KEY_BLINDSHOT + " TEXT NOT NULL, "
+		+ KEY_COMMENT + " TEXT NOT NULL DEFAULT ' '"
 		+")";
 
     public static final String DATABASE_UPDATE_1_TO_102_1 = "ALTER TABLE "
@@ -51,6 +53,11 @@ public class DBAdapter {
     public static final String DATABASE_UPDATE_102_TO_107 = "ALTER TABLE "
             + DATABASE_TABLE + " ADD COLUMN "
             + KEY_BLINDSHOT + " INT NOT NULL DEFAULT '0' "
+            ;
+
+    public static final String DATABASE_UPDATE_107_TO_110 = "ALTER TABLE "
+            + DATABASE_TABLE + " ADD COLUMN "
+            + KEY_COMMENT + " TEXT NOT NULL DEFAULT ' '"
             ;
 
 
@@ -79,20 +86,20 @@ public class DBAdapter {
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 			if(oldVersion <= 1){
-				Log.d("test","Updating DB from version 1 to version 2");
+				Log.d("test","Updating DB from version 100 to version 102");
                 db.execSQL(DATABASE_UPDATE_1_TO_102_1);
                 db.execSQL(DATABASE_UPDATE_1_TO_102_2);
                 oldVersion=102;
             }
             if(oldVersion==102 || oldVersion==103){
-				Log.d("test","Updating DB to version 4");
+				Log.d("test","Updating DB to version 107");
 				db.execSQL(DATABASE_UPDATE_102_TO_107);
                 oldVersion = 107;
 			}
-			/*if(oldVersion==104){
-				Log.d("test","Updating DB to version 5");
-				db.execSQL(DATABASE_UPDATE_TO_FIVE);
-			}*/
+			if(oldVersion==107){
+				Log.d("test","Updating DB to version 110");
+				db.execSQL(DATABASE_UPDATE_107_TO_110);
+			}
 		}
 	}
 
@@ -108,7 +115,7 @@ public class DBAdapter {
 	}
 
 	// ---insert an Entry into the database---
-	public long insertHit(String Date, String Time, Integer Points, String Distance, String Targettype, Integer blindshot) {
+	public long insertHit(String Date, String Time, Integer Points, String Distance, String Targettype, Integer blindshot, String Comment) {
 		
 		long retval;
 		try {
@@ -119,6 +126,7 @@ public class DBAdapter {
             initialValues.put(KEY_DISTANCE, "" + Distance + "");
             initialValues.put(KEY_TARGETTYPE, "" + Targettype + "");
             initialValues.put(KEY_BLINDSHOT, "" + blindshot + "");
+            initialValues.put(KEY_COMMENT, "" + Comment + "");
             retval = db.insert(DATABASE_TABLE, null, initialValues);
         } catch (Exception e) {
 			retval = 0;
@@ -155,6 +163,7 @@ public class DBAdapter {
 		}
 		return cursor.getInt(0);
 	}
+	
 	public int getPointsByDate(String date) {
 		Cursor cursor = db.rawQuery("SELECT SUM(" + KEY_VALUE + ") FROM " + DATABASE_TABLE + " WHERE " + KEY_DATE + " = '" + date + "'", null);
 		if (cursor.moveToFirst()) {
@@ -164,7 +173,7 @@ public class DBAdapter {
 	}
 	
 	public Cursor getHitsByDate(String date) {
-		String query = "SELECT " + KEY_ROWID + ", " + KEY_DATE + " AS " + KEY_DATE + ", " + KEY_VALUE + " AS " + KEY_VALUE + " , " + KEY_DISTANCE + " AS " + KEY_DISTANCE + " , " + KEY_TARGETTYPE + " AS " + KEY_TARGETTYPE + " , " + KEY_BLINDSHOT + " AS " + KEY_BLINDSHOT + " FROM " + DATABASE_TABLE+ " WHERE " + KEY_DATE + " = '" + date + "'";
+		String query = "SELECT " + KEY_ROWID + ", " + KEY_DATE + " AS " + KEY_DATE + ", " + KEY_VALUE + " AS " + KEY_VALUE + " , " + KEY_DISTANCE + " AS " + KEY_DISTANCE + " , " + KEY_TARGETTYPE + " AS " + KEY_TARGETTYPE + " , " + KEY_BLINDSHOT + " AS " + KEY_BLINDSHOT + ", " + KEY_COMMENT + " AS " + KEY_COMMENT + " FROM " + DATABASE_TABLE + " WHERE " + KEY_DATE + " = '" + date + "'";
 		Log.d("ardunoid", query);
 		return db.rawQuery(query , null);
 	}
