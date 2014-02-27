@@ -6,6 +6,7 @@
     <string name="action_settings">Einstellungen</string>
     <string name="action_stats">Statistiken</string>
     <string name="action_hitcount">Treffer</string>
+    <string name="action_sync">Sync - Experimental</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_stats">Statistiken</string>
     <string name="title_statsOverview">Gesamt</string>
@@ -33,6 +34,7 @@
     <string name="points10">10</string>
     
     <string name="distance">Entfernung</string>
+    <string name="distance3m">3 m</string>
     <string name="distance6m">6 m</string>
     <string name="distance12m">12 m</string>
     <string name="distance18m">18 m</string>

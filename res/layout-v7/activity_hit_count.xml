@@ -192,7 +192,13 @@
                         android:layout_height="wrap_content"
                         android:text="@string/distance"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
-
+                <RadioButton
+                    android:id="@+id/distance3m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:checked="true"
+                    android:text="@string/distance3m" />
                     <RadioButton
                         android:id="@+id/distance6m"
                         android:layout_width="wrap_content"

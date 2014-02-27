@@ -6,6 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="action_stats">Stats</string>
     <string name="action_hitcount">Hits</string>
+    <string name="action_sync">Sync - Experimental</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_stats">Statistics</string>
     <string name="title_statsOverview">Overall</string>
@@ -33,6 +34,7 @@
     <string name="points10">10</string>
     
     <string name="distance">Distance</string>
+    <string name="distance3m">3 m</string>
     <string name="distance6m">6 m</string>
     <string name="distance12m">12 m</string>
     <string name="distance18m">18 m</string>

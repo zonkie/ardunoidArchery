@@ -178,6 +178,18 @@ public class DBAdapter {
 		return db.rawQuery(query , null);
 	}
 	
+	public Cursor getHits() {
+		String query = "";
+		try{
+			query = "SELECT " + KEY_ROWID + ", " + KEY_DATE + " AS " + KEY_DATE + ", " + KEY_TIME + " AS " + KEY_TIME + ", " + KEY_VALUE + " AS " + KEY_VALUE + " , " + KEY_DISTANCE + " AS " + KEY_DISTANCE + " , " + KEY_TARGETTYPE + " AS " + KEY_TARGETTYPE + ", " + KEY_BLINDSHOT + " AS " + KEY_BLINDSHOT + ", " + KEY_COMMENT + " AS " + KEY_COMMENT + " FROM " + DATABASE_TABLE + "";
+		} catch (Exception e){
+			Log.e("archery", "Could not create Statement");
+		}
+		
+		Log.d("ardunoid", query);
+		return db.rawQuery(query , null);
+	}
+	
 	public String getDateByHitId(Integer id) {
 		String query = "SELECT " + KEY_DATE + " FROM " + DATABASE_TABLE + " WHERE " + KEY_ROWID + " = " + id;
 		Cursor cursor = db.rawQuery(query, null);
@@ -213,13 +225,7 @@ public class DBAdapter {
 	public Cursor getList() {
 		return db.rawQuery("SELECT " + KEY_ROWID + "," + KEY_VALUE + " AS " + KEY_VALUE + " FROM " + DATABASE_TABLE, null);
 	}
-	
-
-	
-	
-	
-	
-	
+		
 	public Cursor fetchOne(long rowId) throws SQLException {
 		Cursor mCursor = db.query(true, DATABASE_TABLE, new String[] {
 				KEY_ROWID, KEY_DATE, KEY_VALUE }, KEY_ROWID + "=" + rowId,

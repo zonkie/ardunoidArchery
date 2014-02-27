@@ -240,6 +240,11 @@ public class HitCount extends Activity {
 			final Intent intentAbout = new Intent(this, About.class);
 			startActivity(intentAbout);
 			break;
+		case R.id.action_sync:
+			final Intent intentSync = new Intent(this, syncActivity.class);
+			startActivity(intentSync);
+			break;
+
 		default:
 			return super.onOptionsItemSelected(item);
 		}

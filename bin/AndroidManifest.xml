@@ -2,13 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.ardunoid.archery2"
     android:versionCode="10"
-    android:versionName="1.0.10" >
+    android:versionName="1.0.11" >
 
     <uses-sdk
         android:minSdkVersion="7"
         android:targetSdkVersion="18" />
 	<!-- uses-permission
 	    android:name="android.permission.VIBRATE" /-->
+        <uses-permission android:name="android.permission.INTERNET" />
     
     <application
         android:allowBackup="true"
@@ -43,6 +44,11 @@
             android:name="de.ardunoid.archery.TimerActivity"
             android:label="@string/title_activity_timer" >
         </activity>
+        <activity
+            android:name="de.ardunoid.archery.syncActivity"
+            android:label="@string/action_sync" >
+        </activity>
+        <service android:name=".MQTTService"/>
     </application>
 
 </manifest>
